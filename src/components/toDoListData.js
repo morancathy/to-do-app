@@ -1,6 +1,6 @@
 const toDoListData = [
   {
-    title: "Go Diving",
+    title: "Go diving",
     completed: true
   },
   {
