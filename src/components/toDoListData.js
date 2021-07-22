@@ -4,7 +4,7 @@ const toDoListData = [
     completed: true
   },
   {
-    title: "Watch White Sox game",
+    title: "Watch White Sox win",
     completed: false
   },
   {
