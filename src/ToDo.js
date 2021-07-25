@@ -3,14 +3,6 @@ import toDoListData from "./components/toDoListData";
 
 function ToDo(props) {
   return (
-
-    <section>
-    <div className="newItem">
-      <h4>New Item</h4>
-      <form>
-        <input type="text"></input>
-      </form>
-    </div>
     <div className="toDoList">
       <h3>To Do Items:</h3>
         {toDoListData.map((thing, index) => (
@@ -20,7 +12,6 @@ function ToDo(props) {
           </ul>
         ))}
       </div>
-    </section>
   )
 };
 

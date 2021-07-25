@@ -12,15 +12,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.App {
+.container {
   padding: 25px;
   margin: 0 auto;
   width: 30%;
   background-color: white;
 }
-.newItem {
+.newItem > h4{
   /* border: solid yellow; */
-  padding: 10px 0px 20px 0px;
+  margin-bottom: 5px;
+}
+.input {
+  background-color: lightgray;
+  border: none;
+  width: 85%;
+  height: 30px;
 }
 .toDoList {
   /* border: solid blue; */
