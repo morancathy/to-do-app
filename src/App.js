@@ -2,8 +2,6 @@ import { StrictMode } from "react";
 import {useState} from 'react';
 import './styles.css';
 
-import ToDo from './ToDo.js';
-import NewForm from './NewForm';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 
@@ -51,8 +49,6 @@ const toggleReminder = (id) => {
         ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/>
         : 'No To Do Items'
       }
-      <NewForm />
-      <ToDo />
     </div>
   );
 }
