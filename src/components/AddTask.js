@@ -9,7 +9,7 @@ const AddTask = ({onAdd}) => {
     e.preventDefault()
 
     if(!text) {
-      alert('please add taed')
+      alert('please add text')
       return
     }
     onAdd({text, day, reminder})
