@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Go diving",
+      "day": "Feb 15 at 8:00am",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Watch White Sox win",
+      "day": "Oct 26 at 7:05pm",
+      "reminder": false
+    },
+    {
+      "id": 3,
+      "text": "Go for a run",
+      "day": "July 27 at 3:00pm",
+      "reminder": true
+    }
+  ]
+}
