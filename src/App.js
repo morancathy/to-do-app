@@ -1,4 +1,3 @@
-import { StrictMode } from "react";
 import {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './styles.css';
@@ -11,31 +10,31 @@ import About from './components/About';
 
 function App() {
   const [showAddTask, setShowAddTask] = useState (false)
-  const [tasks,setTasks] = useState([
-  {
-    id: 1,
-    text: "Go diving",
-    day: 'Feb 1st at 1:30pm',
-    reminder: true,
-    completed: false
-  },
-  {
-    id: 2,
-    text: "Watch White Sox win",
-    day: 'Feb 2nd at 2:30pm',
-    reminder: true,
-    completed: false
-  },
-  {
-    id: 3,
-    text: "Go for a run",
-    day: 'Feb 3rd at 3:30pm',
-    reminder: true,
-    completed: false
-  }
-])
-/*################     Everything commented is the extra work on the Brad Traversy tutorial, working with routing. Everything worked with the routing.
-But when I shut everything down and revisited this, it would not link to localhost:5000 anymore. I HAVE NO IDEA WHY  ################################*/
+  const [tasks,setTasks] = useState([]);
+//   {
+//     id: 1,
+//     text: "Go diving",
+//     day: 'Feb 1st at 1:30pm',
+//     reminder: false,
+//     completed: false
+//   },
+//   {
+//     id: 2,
+//     text: "Watch White Sox win",
+//     day: 'Feb 2nd at 2:30pm',
+//     reminder: true,
+//     completed: false
+//   },
+//   {
+//     id: 3,
+//     text: "Go for a run",
+//     day: 'Feb 3rd at 3:30pm',
+//     reminder: true,
+//     completed: false
+//   }
+// ])
+/*################     Everything commented is BEFORE the extra work/"fake json server backend" on Brad Traversy tutorial,
+localhost:5000, need to 'npm run server'  as well as 'npm start'                    ############################### */
 
   useEffect(() => {
     const getTasks = async () => {
@@ -49,14 +48,12 @@ But when I shut everything down and revisited this, it would not link to localho
   const fetchTasks = async () => {
     const res = await fetch('http://localhost:5000/tasks')
     const data = await res.json()
-
     return data
   }
 // Fetch Task
   const fetchTask = async (id) => {
     const res = await fetch(`http://localhost:5000/tasks/${id}`)
     const data = await res.json()
-
     return data
   }
 
@@ -74,12 +71,12 @@ const addTask = async (task) => {
   const data = await res.json();
 
   setTasks([...tasks, data])
-  const id = Math.floor(Math.random() * 1000) + 1
-  const newTask = {id, ...task}
-  setTasks([...tasks, newTask])
+  // const id = Math.floor(Math.random() * 1000) + 1
+  // const newTask = {id, ...task}
+  // setTasks([...tasks, newTask])
 }
 
-// delete task         onDelete is a prop of Tasks, so need to pass it in
+// delete task
 const deleteTask = async (id) => {
   await fetch(`http://localhost:5000/tasks/${id}`, {
     method: 'DELETE'
@@ -90,6 +87,7 @@ const deleteTask = async (id) => {
 // toggle reminder
 const toggleReminder = async (id) => {
   const taskToToggle = await fetchTask(id)
+  // const taskToToggle = id
   const updatedTask = {...taskToToggle, reminder: !taskToToggle.reminder}
 
   const res = await fetch(`http://localhost:5000/tasks/${id}`, {
@@ -105,9 +103,15 @@ const toggleReminder = async (id) => {
   setTasks(
     tasks.map((task) =>
     task.id === id
-    ? {...task, reminder: !task.reminder}
+    ? {...task, reminder: data.reminder}
     : task)
   )
+  // setTasks(
+  //   tasks.map((task) =>
+  //   task.id === id
+  //   ? {...task, reminder: !task.reminder}
+  //   : task)
+  // )
 }
 
   return (

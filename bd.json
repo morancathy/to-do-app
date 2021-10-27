@@ -1,16 +1,10 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "text": "Go diving",
-      "day": "Feb 15 at 8:00am",
-      "reminder": false
-    },
-    {
       "id": 2,
       "text": "Watch White Sox win",
       "day": "Oct 26 at 7:05pm",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 3,
@@ -20,7 +14,7 @@
     },
     {
       "text": "Sleep",
-      "day": "tonight",
+      "day": "Tonight",
       "reminder": false,
       "id": 4
     }
